@@ -1,0 +1,92 @@
+#!/bin/bash
+
+function pause() {
+ read -s -n 1 -p "Press any key to continue . . ."
+ echo ""
+}
+
+function menu() {
+
+read -p 'Enter your link: ' link
+echo 
+echo   1 For 144p
+echo   2 For 240p
+echo   3 For 360p
+echo   4 For 480p
+echo   5 For 720p
+echo   6 For 1080p
+echo 
+read -p 'Enter Format Menu Number: ' height
+read -p 'Enter Indices: ' selectindex
+
+}
+Destination='$HOME/Downloads/NEWVids/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'
+
+menu
+
+if [ $selectindex -eq 0 ]
+then 
+    case $height in
+          1 ) 
+          echo "you have selected all index 144p"
+          pause
+          menu;;
+          2 )
+          echo "you have selected all index 240p"
+          pause
+          menu;;
+          3 )
+          echo "you have selected all index 360p"
+          pause
+          menu;;
+          4 )
+          echo "you have selected all index 480p"
+          pause
+          menu;;
+          5 )
+          echo "you have selected all index 720p"
+          pause
+          menu;;
+          6 )
+          echo "you have selected all index 1080p"
+          pause
+          menu;;
+          * )
+          echo "Press 1 to 6"
+          pause
+          menu;;
+    esac
+else 
+    case $height in
+          1 ) 
+          echo "you have selected index 144p"
+          pause
+          menu;;
+          2 )
+          echo "you have selected index 240p"
+          pause
+          menu;;
+          3 )
+          echo "you have selected index 360p"
+          pause
+          menu;;
+          4 )
+          echo "you have selected index 480p"
+          pause
+          menu;;
+          5 )
+          echo "you have selected index 720p"
+          pause
+          menu;;
+          6 )
+          echo "you have selected index 1080p"
+          pause
+          menu;;
+          * )
+          echo "Press 1 to 6"
+          pause 
+          menu ;;
+    esac
+
+
+fi
